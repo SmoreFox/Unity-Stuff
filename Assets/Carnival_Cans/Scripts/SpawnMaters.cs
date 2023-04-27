@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class SpawnMaters : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject Mater;
+    public GameObject materSpawner;
+    public Vector3 materSpawnLoc;
+
+    private void Start()
     {
-        
+        materSpawnLoc = materSpawner.transform.position; 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnMaterFunction()
     {
-        
+        Debug.Log("Spawned a Tomato!");
+        Instantiate(Mater, materSpawnLoc, Quaternion.identity);
     }
 }
